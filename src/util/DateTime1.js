@@ -41,3 +41,73 @@ export const formatDate = (date, time, showTime) => {
 
   return DateTime.fromISO(date).toLocaleString(format);
 };
+//Helper function that formats two dates into one interval
+export const formatDateInterval = (startDate, StartTime, endDate, EndTime) => {
+  if (!startDate || !endDate) {
+    return "";
+  }
+  const start = DateTime.fromISO(startDate);
+  const end = DateTime.fromISO(endDate);
+
+  //format startTime
+  const startTime = DateTime.fromISO(StartTime).toFormat("HH:mm a");
+  const endTimes = DateTime.fromISO(EndTime).toFormat("HH:mm a");
+
+  //format endTime
+  const startDateTime = createMomentWithTime(startDate, StartTime);
+  const endDateTime = createMomentWithTime(endDate, EndTime);
+
+  //format startDate
+  const startDateFormatted = start.toLocaleString({
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  });
+
+  //format endDate
+  const endDateFormatted = end.toLocaleString({
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  });
+
+  //format startTime
+  const startTimeFormatted = startDateTime.toFormat("HH:mm a");
+
+  //format endTime
+  const endTimeFormatted = endDateTime.toFormat("HH:mm a");
+
+  //format startDateTime
+  const startDateTimeFormatted = startDateTime.toLocaleString({
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  });
+
+  //format endDateTime
+  const endDateTimeFormatted = endDateTime.toLocaleString({
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  });
+
+  //format endDateTime
+  const endDateTimeFormatted2 = endDateTime.toFormat("MMM d, yyyy HH:mm a");
+  //format startDateTime
+  const startDateTimeFormatted3 = startDateTime.toFormat("MMM d, yyyy");
+  //format endDateTime
+  const endDateTimeFormatted3 = endDateTime.toFormat("MMM d, yyyy");
+  //format startDateTime
+
+  return {
+    startDate: startDateFormatted,
+    endDate: endDateFormatted,
+    endTime: endTimeFormatted,
+    startTime: startTimeFormatted,
+    startDateTime: startDateTimeFormatted,
+    endDateTime: endDateTimeFormatted,
+    endDateTime2: endDateTimeFormatted2,
+    startDateTime3: startDateTimeFormatted3,
+    endDateTime3: endDateTimeFormatted3,
+  };
+};

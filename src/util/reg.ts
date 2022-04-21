@@ -60,7 +60,7 @@ export const formatDate = (
         month: "short",
         year: "numeric",
       },
-    !!timeString && {
+    timeString && {
       hour: "numeric",
       minute: "numeric",
     }
