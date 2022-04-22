@@ -4,11 +4,11 @@ import Time from "./component/time";
 
 function App() {
   let date = "2018-10-11",
-    time = "10:30",
+    time = "20:30",
     startDate = "2018-10-11",
     startTime = "08:30",
     endDate = "2018-12-11",
-    endTime = "02:30";
+    endTime = "14:30";
 
   return (
     <div className='App'>

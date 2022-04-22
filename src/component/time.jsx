@@ -25,12 +25,9 @@ const Time = ({ date, time, startDate, endDate, startTime, endTime }) => {
   return (
     <div>
       <p>Time is {formatedDate} </p>
-      <p>
-        startDate {timeInterval.startDate} {timeInterval.startTime}
-      </p>
-      <p>
-        endDate {timeInterval.endDate} {timeInterval.endTime}
-      </p>
+      <p>startDate {timeInterval.startDateTimeInterval}</p>
+      <p>endDate {timeInterval.endDateTimeInterval}</p>
+      <p>Start-End Date {timeInterval.dateTimeInterval}</p>
     </div>
   );
 };
